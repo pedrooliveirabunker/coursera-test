@@ -1,77 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 
 <head>
-    <meta charset="utf-8">
-    <title>Hello Coursera!!!!!</title>
+    <meta charset="UTF-8">
+    <title>Restaurante Sabores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+
+        header {
+            background: #b22222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #b22222;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Galeria de imagens */
+        .galeria {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .galeria img {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ementa */
+        .ementa {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .ementa-categoria {
+            flex: 1 1 250px;
+        }
+
+        .ementa-categoria h3 {
+            color: #b22222;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            float: right;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 10px;
+            }
+
+            .galeria {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ementa {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        header element - Some header information goes here.
-        <nav> nav (short for navigation) element</nav>
-
+        <h1>Restaurante Sabores</h1>
+        <p>Sabores tradicionais com um toque moderno</p>
     </header>
-    <h1>Hello Coursera!!!!!!</h1>
-    <section>
-        Section 1
-        <article>Article 1</article>
-        <article>Article 2</article>
-        <article>Article 3</article>
-    </section>
-    <section>
-        Section 2
-        <article>Article 4</article>
-        <article>Article 5</article>
-        <article>Article 6</article>
-    </section>
-    <aside>
-        ASIDE - Some information that relates to the main topic
-    </aside>
-
-    <div>*** DIV 1: Conteudo 1***</div>
-    <div>*** DIV 2: Conteudo 2***</div>
-    <span>*** SPAN 1: Spam 1***</span>
-    <div>
-        *** DIV 3: Conteudo 3***
-        <span>*** SPAN 1: Spam 1***</span>
-        *** DIV 3.1: Conteudo 3.1***
+    <div class="container">
+        <section>
+            <h2>Galeria</h2>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+                    alt="Prato 1">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80"
+                    alt="Prato 2">
+                <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+                    alt="Prato 3">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+                    alt="Prato 4">
+            </div>
+        </section>
+        <section>
+            <h2>Ementa</h2>
+            <div class="ementa">
+                <div class="ementa-categoria">
+                    <h3>Entradas</h3>
+                    <ul>
+                        <li>Pão e Azeite <span class="preco">€2,00</span></li>
+                        <li>Sopa do Dia <span class="preco">€3,50</span></li>
+                        <li>Salada de Polvo <span class="preco">€5,00</span></li>
+                    </ul>
+                </div>
+                <div class="ementa-categoria">
+                    <h3>Pratos Principais</h3>
+                    <ul>
+                        <li>Bacalhau à Brás <span class="preco">€12,00</span></li>
+                        <li>Arroz de Marisco <span class="preco">€14,00</span></li>
+                        <li>Frango Grelhado <span class="preco">€10,00</span></li>
+                    </ul>
+                </div>
+                <div class="ementa-categoria">
+                    <h3>Sobremesas</h3>
+                    <ul>
+                        <li>Mousse de Chocolate <span class="preco">€4,00</span></li>
+                        <li>Pudim Caseiro <span class="preco">€3,50</span></li>
+                        <li>Fruuuuuta da Época <span class="preco">€3,00</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
-
-
-    <p>Cousera is so COOL! I am learning <span>SO much!</span></p>
-    <div>
-        A minha lista:
-        <ul>
-            <li>Milk</li>
-            <li>Donuts</li>
-            <li>Cookies
-                <ul>
-                    <li>Chocolate</li>
-                    <li>Sugar</li>
-                </ul>
-            </li>
-            <li>Pepto Bismol</li>
-        </ul>
-    </div>
-    <div>
-        A minha lista:
-        <ol>
-            <li>Milk</li>
-            <li>Donuts</li>
-            <li>Cookies
-                <ol>
-                    <li>Chocolate</li>
-                    <li>Sugar</li>
-                </ol>
-            </li>
-            <li>Pepto Bismol</li>
-        </ol>
-    </div>
-
 </body>
-<footer>
-    Pedro Oliveira
-</footer>
 
 </html>
