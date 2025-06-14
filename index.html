@@ -72,45 +72,70 @@
             margin-top: 30px;
         }
 
-        /* Updated menu styling for two columns */
+        /* Menu styling to match the image layout */
         .menu-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            /* Space between columns */
+            /* This container will now simply hold the categories, they will stack */
+            /* Removed display:flex and gap from here */
         }
 
         .menu-category {
-            flex: 1 1 45%;
-            /* Allows two columns, wraps on smaller screens */
-            min-width: 300px;
-            /* Minimum width before wrapping */
+            /* Categories will now take full width, stacking vertically */
+            /* Removed flex and min-width from here */
+            margin-bottom: 30px;
+        }
+
+        .menu-category h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .menu-two-columns-wrapper {
+            display: flex;
+            gap: 20px;
+            /* Space between the two internal tables */
+            width: 100%;
         }
 
         .menu-list {
             width: 100%;
+            /* Default table width */
             border-collapse: collapse;
-            margin-top: 12px;
+            margin-top: 0;
+        }
+
+        .menu-two-columns-wrapper .menu-list {
+            flex: 1;
+            /* Each table inside the wrapper takes equal space */
+            width: auto;
+            /* Allow flex to control width */
         }
 
         .menu-list th,
         .menu-list td {
-            padding: 7px 10px;
+            padding: 7px 0;
+            /* Vertical padding */
         }
 
-        .menu-list th {
-            text-align: left;
-            color: #a67c52;
+        .menu-list td:first-child {
+            padding-left: 10px;
+            /* Left padding for item name */
+        }
+
+        .menu-list td:last-child {
+            padding-right: 10px;
+            /* Right padding for price */
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Border styling for rows */
+        .menu-list tr td {
             border-bottom: 1px solid #e0cda0;
         }
 
-        .menu-list td {
-            vertical-align: top;
-        }
-
-        .price {
-            text-align: right;
-            white-space: nowrap;
+        .menu-list tr:last-child td {
+            border-bottom: none;
+            /* No border for the last row in each table */
         }
 
         /* End of updated menu styling */
@@ -199,10 +224,14 @@
                 height: var(--header-height);
             }
 
-            /* Adjust menu columns for smaller screens */
-            .menu-category {
-                flex: 1 1 100%;
-                /* Stacks columns on smaller screens */
+            /* On small screens, stack the two internal item columns */
+            .menu-two-columns-wrapper {
+                flex-direction: column;
+            }
+
+            .menu-two-columns-wrapper .menu-list {
+                width: 100%;
+                /* Take full width when stacked */
             }
         }
     </style>
@@ -238,113 +267,121 @@
         <div class="menu-container">
             <div class="menu-category">
                 <h3 style="color:#a67c52;">Petiscos | Tapas</h3>
-                <table class="menu-list">
-                    <tr>
-                        <td>Pica-Pau d' porco</td>
-                        <td class="price">8,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Bifana</td>
-                        <td class="price">3,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Prego</td>
-                        <td class="price">5,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Chouriça assada</td>
-                        <td class="price">5,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Tabua d' Queijos</td>
-                        <td class="price">8,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Tabua d' Enchidos</td>
-                        <td class="price">12,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Cogumelos a Guilho</td>
-                        <td class="price">6,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Camarão a Guilho</td>
-                        <td class="price">15,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Batata Frita Rustica</td>
-                        <td class="price">5,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Tosta Vegan</td>
-                        <td class="price">5,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Tosta Mista</td>
-                        <td class="price">2,50€</td>
-                    </tr>
-                    <tr>
-                        <td>Sandes Queijo da Serra</td>
-                        <td class="price">4,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Sandes de presunto</td>
-                        <td class="price">4,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Azeitonas</td>
-                        <td class="price">1,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Cesta d' Pão</td>
-                        <td class="price">1,00€</td>
-                    </tr>
-                </table>
+                <div class="menu-two-columns-wrapper">
+                    <table class="menu-list">
+                        <tr>
+                            <td>Pica-Pau d' porco</td>
+                            <td class="price">8,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Bifana</td>
+                            <td class="price">3,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Prego</td>
+                            <td class="price">5,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Chouriça assada</td>
+                            <td class="price">5,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Tabua d' Queijos</td>
+                            <td class="price">8,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Tabua d' Enchidos</td>
+                            <td class="price">12,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Cogumelos a Guilho</td>
+                            <td class="price">6,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Camarão a Guilho</td>
+                            <td class="price">15,00€</td>
+                        </tr>
+                    </table>
+                    <table class="menu-list">
+                        <tr>
+                            <td>Batata Frita Rustica</td>
+                            <td class="price">5,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Tosta Vegan</td>
+                            <td class="price">5,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Tosta Mista</td>
+                            <td class="price">2,50€</td>
+                        </tr>
+                        <tr>
+                            <td>Sandes Queijo da Serra</td>
+                            <td class="price">4,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Sandes de presunto</td>
+                            <td class="price">4,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Azeitonas</td>
+                            <td class="price">1,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Cesta d' Pão</td>
+                            <td class="price">1,00€</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
             <div class="menu-category">
                 <h3 style="color:#a67c52;">Pratos</h3>
-                <table class="menu-list">
-                    <tr>
-                        <td>
-                            Francesinha d' Porco<br>
-                            <small>(pão d' forma, salsicha d' churrasco, bife d' porco, ovo estrelado, queijo)</small>
-                        </td>
-                        <td class="price">11,00€</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Francesinha d' Vitela<br>
-                            <small>(pão d' forma, salsicha d' churrasco, bife d' vitela, ovo estrelado, queijo
-                                mozzarella)</small>
-                        </td>
-                        <td class="price">13,00€</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Francesinha Vegan<br>
-                            <small>(pão d' forma, tofu, seitan, cogumelos, curgete, beringela, queijo vegan)</small>
-                        </td>
-                        <td class="price">13,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Bife Capitão<br><small>(bife da vazia, batata frita, arroz e ovo estrelado)</small></td>
-                        <td class="price">14,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Feijocas À Capitão<br><small>(feijoca, chouriça, carne de porco, cenoura)</small></td>
-                        <td class="price">8,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Açorda de Camarão</td>
-                        <td class="price">10,00€</td>
-                    </tr>
-                    <tr>
-                        <td>Alho Francês à Braz</td>
-                        <td class="price">8,00€</td>
-                    </tr>
-                </table>
-
+                <div class="menu-two-columns-wrapper">
+                    <table class="menu-list">
+                        <tr>
+                            <td>
+                                Francesinha d' Porco<br>
+                                <small>(pão d' forma, salsicha d' churrasco, bife d' porco, ovo estrelado,
+                                    queijo)</small>
+                            </td>
+                            <td class="price">11,00€</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Francesinha d' Vitela<br>
+                                <small>(pão d' forma, salsicha d' churrasco, bife d' vitela, ovo estrelado, queijo
+                                    mozzarella)</small>
+                            </td>
+                            <td class="price">13,00€</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Francesinha Vegan<br>
+                                <small>(pão d' forma, tofu, seitan, cogumelos, curgete, beringela, queijo vegan)</small>
+                            </td>
+                            <td class="price">13,00€</td>
+                        </tr>
+                    </table>
+                    <table class="menu-list">
+                        <tr>
+                            <td>Bife Capitão<br><small>(bife da vazia, batata frita, arroz e ovo estrelado)</small></td>
+                            <td class="price">14,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Feijocas À Capitão<br><small>(feijoca, chouriça, carne de porco, cenoura)</small></td>
+                            <td class="price">8,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Açorda de Camarão</td>
+                            <td class="price">10,00€</td>
+                        </tr>
+                        <tr>
+                            <td>Alho Francês à Braz</td>
+                            <td class="price">8,00€</td>
+                        </tr>
+                    </table>
+                </div>
                 <h3 style="color:#a67c52; margin-top:30px;">Sobremesa</h3>
                 <table class="menu-list">
                     <tr>
@@ -363,12 +400,9 @@
     <div class="section" id="galeria">
         <h2>Galeria</h2>
         <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
-                alt="Sala do restaurante">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
-                alt="Ambiente Lugar do Capitão">
-            <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=600&q=80"
-                alt="Detalhes do espaço">
+            <img src="http://googleusercontent.com/image_generation_content/0" alt="Petiscos variados">
+            <img src="http://googleusercontent.com/image_generation_content/1" alt="Pratos principais portugueses">
+            <img src="http://googleusercontent.com/image_generation_content/2" alt="Sobremesas portuguesas">
         </div>
     </div>
 
