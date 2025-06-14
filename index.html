@@ -6,6 +6,10 @@
     <title>Lugar do Capitão</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        :root {
+            --header-height: 130px;
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -17,7 +21,12 @@
             background: #f7e7c5;
             padding: 30px 0 15px 0;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1000;
         }
 
         header h1 {
@@ -45,8 +54,9 @@
 
         .section {
             max-width: 900px;
-            margin: 50px auto 0 auto;
+            margin: 0 auto 0 auto;
             padding: 0 18px;
+            scroll-margin-top: var(--header-height);
         }
 
         h2 {
@@ -59,6 +69,7 @@
         .about {
             font-size: 1.18em;
             line-height: 1.6;
+            margin-top: 30px;
         }
 
         .menu-list {
@@ -140,7 +151,15 @@
             margin: 0;
         }
 
+        .spacer {
+            height: var(--header-height);
+        }
+
         @media (max-width:700px) {
+            :root {
+                --header-height: 170px;
+            }
+
             .gallery img {
                 width: 98vw;
                 height: 170px;
@@ -158,6 +177,10 @@
             .music-poster {
                 width: 96vw;
             }
+
+            .spacer {
+                height: var(--header-height);
+            }
         }
     </style>
 </head>
@@ -173,15 +196,17 @@
         </nav>
     </header>
 
+    <div class="spacer"></div>
+
     <div class="section" id="restaurante">
         <h2>O Restaurante</h2>
         <div class="about">
             Bem-vindo ao <b>Lugar do Capitão</b>! Um espaço acolhedor onde a tradição e o sabor se encontram. Venha
             experimentar os nossos petiscos, pratos regionais e opções vegan, num ambiente familiar e
             descontraído.<br><br>
-            <b>Morada:</b> Rua do Sabor, 123, Vila Tradicional<br>
-            <b>Contacto:</b> 912 345 678<br>
-            <b>Horário:</b> Segunda a Sábado, 12h-23h
+            <b>Morada:</b> Rua do Gonçalinho<br>
+            <b>Contacto:</b> 965 879 510<br>
+            <b>Horário:</b> Terça a Sábado, 17h-2h
         </div>
     </div>
 
@@ -206,23 +231,23 @@
                 <td class="price">5,00€</td>
             </tr>
             <tr>
-                <td>Tábua d' Queijos</td>
+                <td>Tabua d' Queijos</td>
                 <td class="price">8,00€</td>
             </tr>
             <tr>
-                <td>Tábua d' Enchidos</td>
+                <td>Tabua d' Enchidos</td>
                 <td class="price">12,00€</td>
             </tr>
             <tr>
-                <td>Cogumelos à Guilho</td>
+                <td>Cogumelos a Guilho</td>
                 <td class="price">6,00€</td>
             </tr>
             <tr>
-                <td>Camarão à Guilho</td>
+                <td>Camarão a Guilho</td>
                 <td class="price">15,00€</td>
             </tr>
             <tr>
-                <td>Batata Frita Rústica</td>
+                <td>Batata Frita Rustica</td>
                 <td class="price">5,00€</td>
             </tr>
             <tr>
@@ -334,7 +359,6 @@
                 <h4>Noite de Jazz</h4>
                 <p>28 de Junho, 22h<br>Quarteto Jazz do Norte</p>
             </div>
-            <!-- Adiciona mais cartazes conforme necessário -->
             <div class="music-poster">
                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
                     alt="Cartaz Música ao Vivo">
