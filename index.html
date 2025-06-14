@@ -54,9 +54,13 @@
 
         .section {
             max-width: 900px;
-            margin: 0 auto 0 auto;
+            margin: 0 auto;
             padding: 0 18px;
-            scroll-margin-top: var(--header-height);
+        }
+
+        .spacer {
+            height: var(--header-height);
+            width: 100%;
         }
 
         h2 {
@@ -72,15 +76,9 @@
             margin-top: 30px;
         }
 
-        /* Menu styling to match the image layout */
-        .menu-container {
-            /* This container will now simply hold the categories, they will stack */
-            /* Removed display:flex and gap from here */
-        }
+        .menu-container {}
 
         .menu-category {
-            /* Categories will now take full width, stacking vertically */
-            /* Removed flex and min-width from here */
             margin-bottom: 30px;
         }
 
@@ -92,53 +90,42 @@
         .menu-two-columns-wrapper {
             display: flex;
             gap: 20px;
-            /* Space between the two internal tables */
             width: 100%;
         }
 
         .menu-list {
             width: 100%;
-            /* Default table width */
             border-collapse: collapse;
             margin-top: 0;
         }
 
         .menu-two-columns-wrapper .menu-list {
             flex: 1;
-            /* Each table inside the wrapper takes equal space */
             width: auto;
-            /* Allow flex to control width */
         }
 
         .menu-list th,
         .menu-list td {
             padding: 7px 0;
-            /* Vertical padding */
         }
 
         .menu-list td:first-child {
             padding-left: 10px;
-            /* Left padding for item name */
         }
 
         .menu-list td:last-child {
             padding-right: 10px;
-            /* Right padding for price */
             text-align: right;
             white-space: nowrap;
         }
 
-        /* Border styling for rows */
         .menu-list tr td {
             border-bottom: 1px solid #e0cda0;
         }
 
         .menu-list tr:last-child td {
             border-bottom: none;
-            /* No border for the last row in each table */
         }
-
-        /* End of updated menu styling */
 
         .gallery {
             display: flex;
@@ -193,10 +180,6 @@
             margin: 0;
         }
 
-        .spacer {
-            height: var(--header-height);
-        }
-
         @media (max-width:700px) {
             :root {
                 --header-height: 170px;
@@ -224,14 +207,12 @@
                 height: var(--header-height);
             }
 
-            /* On small screens, stack the two internal item columns */
             .menu-two-columns-wrapper {
                 flex-direction: column;
             }
 
             .menu-two-columns-wrapper .menu-list {
                 width: 100%;
-                /* Take full width when stacked */
             }
         }
     </style>
@@ -287,7 +268,7 @@
                         </tr>
                         <tr>
                             <td>Tabua d' Queijos</td>
-                            <td class="price">12,00€</td>
+                            <td class="price">8,00€</td>
                         </tr>
                         <tr>
                             <td>Tabua d' Enchidos</td>
@@ -400,9 +381,12 @@
     <div class="section" id="galeria">
         <h2>Galeria</h2>
         <div class="gallery">
-            <img src="http://googleusercontent.com/image_generation_content/0" alt="Petiscos variados">
-            <img src="http://googleusercontent.com/image_generation_content/1" alt="Pratos principais portugueses">
-            <img src="http://googleusercontent.com/image_generation_content/2" alt="Sobremesas portuguesas">
+            <img src="https://images.unsplash.com/photo-1596766467389-138d9f4f4f72?auto=format&fit=crop&w=600&q=80"
+                alt="Petiscos variados">
+            <img src="https://images.unsplash.com/photo-1621217036230-f8c5b0c7e2d9?auto=format&fit=crop&w=600&q=80"
+                alt="Pratos principais portugueses">
+            <img src="https://images.unsplash.com/photo-1587393437220-410a56f2b7f7?auto=format&fit=crop&w=600&q=80"
+                alt="Sobremesas portuguesas">
         </div>
     </div>
 
