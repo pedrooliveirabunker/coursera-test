@@ -1,78 +1,406 @@
-<div class="section" id="ementa">
-    <h2>Ementa</h2>
-    <h3 style="color:#a67c52;">Petiscos | Tapas</h3>
-    <div class="menu-duas-colunas">
-        <div>
-            <div class="menu-row"><span>Pica-Pau d' porco</span><span class="price">8,00€</span></div>
-            <div class="menu-row"><span>Bifana</span><span class="price">5,00€</span></div>
-            <div class="menu-row"><span>Prego</span><span class="price">5,00€</span></div>
-            <div class="menu-row"><span>Chouriça assada</span><span class="price">5,00€</span></div>
-            <div class="menu-row"><span>Tabua d' Queijos</span><span class="price">8,00€</span></div>
-            <div class="menu-row"><span>Tabua d' Enchidos</span><span class="price">12,00€</span></div>
-            <div class="menu-row"><span>Cogumelos a Guilho</span><span class="price">6,00€</span></div>
-            <div class="menu-row"><span>Camarão a Guilho</span><span class="price">15,00€</span></div>
-        </div>
-        <div>
-            <div class="menu-row"><span>Batata Frita Rústica</span><span class="price">5,00€</span></div>
-            <div class="menu-row"><span>Tosta Vegan</span><span class="price">5,00€</span></div>
-            <div class="menu-row"><span>Tosta Mista</span><span class="price">2,50€</span></div>
-            <div class="menu-row"><span>Sandes Queijo da Serra</span><span class="price">4,00€</span></div>
-            <div class="menu-row"><span>Sandes de presunto</span><span class="price">4,00€</span></div>
-            <div class="menu-row"><span>Azeitonas</span><span class="price">1,00€</span></div>
-            <div class="menu-row"><span>Cesta d' Pão</span><span class="price">1,00€</span></div>
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lugar do Capitão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --header-height: 130px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f6ef;
+            color: #5c432a;
+        }
+
+        header {
+            background: #f7e7c5;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.7em;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #a67c52;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.12em;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto 0 auto;
+            padding: 0 18px;
+            scroll-margin-top: var(--header-height);
+        }
+
+        h2 {
+            color: #a67c52;
+            border-bottom: 1px solid #e0cda0;
+            padding-bottom: 4px;
+            margin-bottom: 18px;
+        }
+
+        .about {
+            font-size: 1.18em;
+            line-height: 1.6;
+            margin-top: 30px;
+        }
+
+        /* Updated menu styling for two columns */
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Space between columns */
+        }
+
+        .menu-category {
+            flex: 1 1 45%;
+            /* Allows two columns, wraps on smaller screens */
+            min-width: 300px;
+            /* Minimum width before wrapping */
+        }
+
+        .menu-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        .menu-list th,
+        .menu-list td {
+            padding: 7px 10px;
+        }
+
+        .menu-list th {
+            text-align: left;
+            color: #a67c52;
+            border-bottom: 1px solid #e0cda0;
+        }
+
+        .menu-list td {
+            vertical-align: top;
+        }
+
+        .price {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* End of updated menu styling */
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 260px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        .footer {
+            text-align: center;
+            color: #a67c52;
+            margin: 40px 0 10px 0;
+            font-size: 0.95em;
+        }
+
+        .music {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .music-poster {
+            background: #fffbe6;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 10px;
+            width: 240px;
+        }
+
+        .music-poster img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .music-poster h4 {
+            margin: 10px 0 6px 0;
+            color: #a67c52;
+        }
+
+        .music-poster p {
+            font-size: 0.97em;
+            margin: 0;
+        }
+
+        .spacer {
+            height: var(--header-height);
+        }
+
+        @media (max-width:700px) {
+            :root {
+                --header-height: 170px;
+            }
+
+            .gallery img {
+                width: 98vw;
+                height: 170px;
+            }
+
+            .section {
+                padding: 0 4vw;
+            }
+
+            .music {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .music-poster {
+                width: 96vw;
+            }
+
+            .spacer {
+                height: var(--header-height);
+            }
+
+            /* Adjust menu columns for smaller screens */
+            .menu-category {
+                flex: 1 1 100%;
+                /* Stacks columns on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lugar do Capitão</h1>
+        <nav>
+            <a href="#restaurante">O Restaurante</a>
+            <a href="#ementa">Ementa</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#musica">Música ao Vivo</a>
+        </nav>
+    </header>
+
+    <div class="spacer"></div>
+
+    <div class="section" id="restaurante">
+        <h2>O Restaurante</h2>
+        <div class="about">
+            Bem-vindo ao <b>Lugar do Capitão</b>! Um espaço acolhedor onde a tradição e o sabor se encontram. Venha
+            experimentar os nossos petiscos, pratos regionais e opções vegan, num ambiente familiar e
+            descontraído.<br><br>
+            <b>Morada:</b> Rua do Gonçalinho<br>
+            <b>Contacto:</b> 965 879 510<br>
+            <b>Horário:</b> Terça a Sábado, 17h-2h
         </div>
     </div>
 
-    <!-- Mantém os Pratos e Sobremesa como já tens, ou aplica o mesmo estilo se quiseres -->
-    <h3 style="color:#a67c52; margin-top:30px;">Pratos</h3>
-    <table class="menu-list">
-        <tr>
-            <td>
-                Francesinha d' Porco<br>
-                <small>(pão d' forma, salsicha d' churrasco, bife d' porco, ovo estrelado, queijo)</small>
-            </td>
-            <td class="price">11,00€</td>
-        </tr>
-        <tr>
-            <td>
-                Francesinha d' Vitela<br>
-                <small>(pão d' forma, salsicha d' churrasco, bife d' vitela, ovo estrelado, queijo mozzarella)</small>
-            </td>
-            <td class="price">13,00€</td>
-        </tr>
-        <tr>
-            <td>
-                Francesinha Vegan<br>
-                <small>(pão d' forma, tofu, seitan, cogumelos, curgete, beringela, queijo vegan)</small>
-            </td>
-            <td class="price">13,00€</td>
-        </tr>
-        <tr>
-            <td>Bife Capitão<br><small>(bife da vazia, batata frita, arroz e ovo estrelado)</small></td>
-            <td class="price">14,00€</td>
-        </tr>
-        <tr>
-            <td>Feijocas À Capitão<br><small>(feijoca, chouriça, carne de porco, cenoura)</small></td>
-            <td class="price">8,00€</td>
-        </tr>
-        <tr>
-            <td>Açorda de Camarão</td>
-            <td class="price">10,00€</td>
-        </tr>
-        <tr>
-            <td>Alho Francês à Braz</td>
-            <td class="price">8,00€</td>
-        </tr>
-    </table>
-    <h3 style="color:#a67c52; margin-top:30px;">Sobremesa</h3>
-    <table class="menu-list">
-        <tr>
-            <td>Sobremesa</td>
-            <td class="price">3,00€</td>
-        </tr>
-    </table>
-    <div style="margin-top:18px; color:#a67c52;">
-        <b>Pratos do Dia disponíveis</b><br>
-        <span style="font-size:0.95em;">IVA à taxa em vigor</span>
+    <div class="section" id="ementa">
+        <h2>Ementa</h2>
+        <div class="menu-container">
+            <div class="menu-category">
+                <h3 style="color:#a67c52;">Petiscos | Tapas</h3>
+                <table class="menu-list">
+                    <tr>
+                        <td>Pica-Pau d' porco</td>
+                        <td class="price">8,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Bifana</td>
+                        <td class="price">5,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Prego</td>
+                        <td class="price">5,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Chouriça assada</td>
+                        <td class="price">5,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Tabua d' Queijos</td>
+                        <td class="price">8,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Tabua d' Enchidos</td>
+                        <td class="price">12,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Cogumelos a Guilho</td>
+                        <td class="price">6,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Camarão a Guilho</td>
+                        <td class="price">15,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Batata Frita Rustica</td>
+                        <td class="price">5,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Tosta Vegan</td>
+                        <td class="price">5,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Tosta Mista</td>
+                        <td class="price">2,50€</td>
+                    </tr>
+                    <tr>
+                        <td>Sandes Queijo da Serra</td>
+                        <td class="price">4,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Sandes de presunto</td>
+                        <td class="price">4,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Azeitonas</td>
+                        <td class="price">1,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Cesta d' Pão</td>
+                        <td class="price">1,00€</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="menu-category">
+                <h3 style="color:#a67c52;">Pratos</h3>
+                <table class="menu-list">
+                    <tr>
+                        <td>
+                            Francesinha d' Porco<br>
+                            <small>(pão d' forma, salsicha d' churrasco, bife d' porco, ovo estrelado, queijo)</small>
+                        </td>
+                        <td class="price">11,00€</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Francesinha d' Vitela<br>
+                            <small>(pão d' forma, salsicha d' churrasco, bife d' vitela, ovo estrelado, queijo
+                                mozzarella)</small>
+                        </td>
+                        <td class="price">13,00€</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Francesinha Vegan<br>
+                            <small>(pão d' forma, tofu, seitan, cogumelos, curgete, beringela, queijo vegan)</small>
+                        </td>
+                        <td class="price">13,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Bife Capitão<br><small>(bife da vazia, batata frita, arroz e ovo estrelado)</small></td>
+                        <td class="price">14,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Feijocas À Capitão<br><small>(feijoca, chouriça, carne de porco, cenoura)</small></td>
+                        <td class="price">8,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Açorda de Camarão</td>
+                        <td class="price">10,00€</td>
+                    </tr>
+                    <tr>
+                        <td>Alho Francês à Braz</td>
+                        <td class="price">8,00€</td>
+                    </tr>
+                </table>
+
+                <h3 style="color:#a67c52; margin-top:30px;">Sobremesa</h3>
+                <table class="menu-list">
+                    <tr>
+                        <td>Sobremesa</td>
+                        <td class="price">3,00€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="margin-top:18px; color:#a67c52;">
+            <b>Pratos do Dia disponíveis</b><br>
+            <span style="font-size:0.95em;">IVA à taxa em vigor</span>
+        </div>
     </div>
-</div>
+
+    <div class="section" id="galeria">
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+                alt="Sala do restaurante">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
+                alt="Ambiente Lugar do Capitão">
+            <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=600&q=80"
+                alt="Detalhes do espaço">
+        </div>
+    </div>
+
+    <div class="section" id="musica">
+        <h2>Música ao Vivo</h2>
+        <div class="music">
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Concerto">
+                <h4>Fado à Sexta</h4>
+                <p>21 de Junho, 21h30<br>Com Ana Silva & Amigos</p>
+            </div>
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Jazz">
+                <h4>Noite de Jazz</h4>
+                <p>28 de Junho, 22h<br>Quarteto Jazz do Norte</p>
+            </div>
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Música ao Vivo">
+                <h4>Rock no Capitão</h4>
+                <p>5 de Julho, 22h<br>Banda: Os Navegantes</p>
+            </div>
+        </div>
+        <p style="margin-top:25px; color:#a67c52;">Segue-nos nas redes sociais para saberes sempre os próximos eventos!
+        </p>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Lugar do Capitão &mdash; Todos os direitos reservados
+    </div>
+</body>
+
+</html>
