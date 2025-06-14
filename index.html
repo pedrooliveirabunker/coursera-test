@@ -3,95 +3,160 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Restaurante Sabores</title>
+    <title>Lugar do Capitão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #f8f8f8;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f6ef;
+            color: #5c432a;
         }
 
         header {
-            background: #b22222;
-            color: #fff;
-            padding: 20px 0;
+            background: #f7e7c5;
+            padding: 30px 0 15px 0;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.7em;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #a67c52;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.12em;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 50px auto 0 auto;
+            padding: 0 18px;
         }
 
         h2 {
-            border-bottom: 2px solid #b22222;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            color: #a67c52;
+            border-bottom: 1px solid #e0cda0;
+            padding-bottom: 4px;
+            margin-bottom: 18px;
         }
 
-        /* Galeria de imagens */
-        .galeria {
+        .about {
+            font-size: 1.18em;
+            line-height: 1.6;
+        }
+
+        .menu-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        .menu-list th,
+        .menu-list td {
+            padding: 7px 10px;
+        }
+
+        .menu-list th {
+            text-align: left;
+            color: #a67c52;
+            border-bottom: 1px solid #e0cda0;
+        }
+
+        .menu-list td {
+            vertical-align: top;
+        }
+
+        .price {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .gallery {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            gap: 18px;
+            justify-content: center;
         }
 
-        .galeria img {
-            width: 200px;
-            height: 130px;
+        .gallery img {
+            width: 260px;
+            height: 170px;
             object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
         }
 
-        /* Ementa */
-        .ementa {
+        .footer {
+            text-align: center;
+            color: #a67c52;
+            margin: 40px 0 10px 0;
+            font-size: 0.95em;
+        }
+
+        .music {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
         }
 
-        .ementa-categoria {
-            flex: 1 1 250px;
+        .music-poster {
+            background: #fffbe6;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 10px;
+            width: 240px;
         }
 
-        .ementa-categoria h3 {
-            color: #b22222;
+        .music-poster img {
+            width: 100%;
+            border-radius: 6px;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
+        .music-poster h4 {
+            margin: 10px 0 6px 0;
+            color: #a67c52;
         }
 
-        li {
-            margin-bottom: 10px;
+        .music-poster p {
+            font-size: 0.97em;
+            margin: 0;
         }
 
-        .preco {
-            float: right;
-            color: #888;
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                padding: 10px;
+        @media (max-width:700px) {
+            .gallery img {
+                width: 98vw;
+                height: 170px;
             }
 
-            .galeria {
+            .section {
+                padding: 0 4vw;
+            }
+
+            .music {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .ementa {
-                flex-direction: column;
+            .music-poster {
+                width: 96vw;
             }
         }
     </style>
@@ -99,52 +164,190 @@
 
 <body>
     <header>
-        <h1>Restaurante Sabores</h1>
-        <p>Sabores tradicionais com um toque moderno</p>
+        <h1>Lugar do Capitão</h1>
+        <nav>
+            <a href="#restaurante">O Restaurante</a>
+            <a href="#ementa">Ementa</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#musica">Música ao Vivo</a>
+        </nav>
     </header>
-    <div class="container">
-        <section>
-            <h2>Galeria</h2>
-            <div class="galeria">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
-                    alt="Prato 1">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80"
-                    alt="Prato 2">
-                <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
-                    alt="Prato 3">
-                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
-                    alt="Prato 4">
+
+    <div class="section" id="restaurante">
+        <h2>O Restaurante</h2>
+        <div class="about">
+            Bem-vindo ao <b>Lugar do Capitão</b>! Um espaço acolhedor onde a tradição e o sabor se encontram. Venha
+            experimentar os nossos petiscos, pratos regionais e opções vegan, num ambiente familiar e
+            descontraído.<br><br>
+            <b>Morada:</b> Rua do Sabor, 123, Vila Tradicional<br>
+            <b>Contacto:</b> 912 345 678<br>
+            <b>Horário:</b> Segunda a Sábado, 12h-23h
+        </div>
+    </div>
+
+    <div class="section" id="ementa">
+        <h2>Ementa</h2>
+        <h3 style="color:#a67c52;">Petiscos | Tapas</h3>
+        <table class="menu-list">
+            <tr>
+                <td>Pica-Pau d' porco</td>
+                <td class="price">8,00€</td>
+            </tr>
+            <tr>
+                <td>Bifana</td>
+                <td class="price">5,00€</td>
+            </tr>
+            <tr>
+                <td>Prego</td>
+                <td class="price">5,00€</td>
+            </tr>
+            <tr>
+                <td>Chouriça assada</td>
+                <td class="price">5,00€</td>
+            </tr>
+            <tr>
+                <td>Tábua d' Queijos</td>
+                <td class="price">8,00€</td>
+            </tr>
+            <tr>
+                <td>Tábua d' Enchidos</td>
+                <td class="price">12,00€</td>
+            </tr>
+            <tr>
+                <td>Cogumelos à Guilho</td>
+                <td class="price">6,00€</td>
+            </tr>
+            <tr>
+                <td>Camarão à Guilho</td>
+                <td class="price">15,00€</td>
+            </tr>
+            <tr>
+                <td>Batata Frita Rústica</td>
+                <td class="price">5,00€</td>
+            </tr>
+            <tr>
+                <td>Tosta Vegan</td>
+                <td class="price">5,00€</td>
+            </tr>
+            <tr>
+                <td>Tosta Mista</td>
+                <td class="price">2,50€</td>
+            </tr>
+            <tr>
+                <td>Sandes Queijo da Serra</td>
+                <td class="price">4,00€</td>
+            </tr>
+            <tr>
+                <td>Sandes de presunto</td>
+                <td class="price">4,00€</td>
+            </tr>
+            <tr>
+                <td>Azeitonas</td>
+                <td class="price">1,00€</td>
+            </tr>
+            <tr>
+                <td>Cesta d' Pão</td>
+                <td class="price">1,00€</td>
+            </tr>
+        </table>
+        <h3 style="color:#a67c52; margin-top:30px;">Pratos</h3>
+        <table class="menu-list">
+            <tr>
+                <td>
+                    Francesinha d' Porco<br>
+                    <small>(pão d' forma, salsicha d' churrasco, bife d' porco, ovo estrelado, queijo)</small>
+                </td>
+                <td class="price">11,00€</td>
+            </tr>
+            <tr>
+                <td>
+                    Francesinha d' Vitela<br>
+                    <small>(pão d' forma, salsicha d' churrasco, bife d' vitela, ovo estrelado, queijo
+                        mozzarella)</small>
+                </td>
+                <td class="price">13,00€</td>
+            </tr>
+            <tr>
+                <td>
+                    Francesinha Vegan<br>
+                    <small>(pão d' forma, tofu, seitan, cogumelos, curgete, beringela, queijo vegan)</small>
+                </td>
+                <td class="price">13,00€</td>
+            </tr>
+            <tr>
+                <td>Bife Capitão<br><small>(bife da vazia, batata frita, arroz e ovo estrelado)</small></td>
+                <td class="price">14,00€</td>
+            </tr>
+            <tr>
+                <td>Feijocas À Capitão<br><small>(feijoca, chouriça, carne de porco, cenoura)</small></td>
+                <td class="price">8,00€</td>
+            </tr>
+            <tr>
+                <td>Açorda de Camarão</td>
+                <td class="price">10,00€</td>
+            </tr>
+            <tr>
+                <td>Alho Francês à Braz</td>
+                <td class="price">8,00€</td>
+            </tr>
+        </table>
+        <h3 style="color:#a67c52; margin-top:30px;">Sobremesa</h3>
+        <table class="menu-list">
+            <tr>
+                <td>Sobremesa</td>
+                <td class="price">3,00€</td>
+            </tr>
+        </table>
+        <div style="margin-top:18px; color:#a67c52;">
+            <b>Pratos do Dia disponíveis</b><br>
+            <span style="font-size:0.95em;">IVA à taxa em vigor</span>
+        </div>
+    </div>
+
+    <div class="section" id="galeria">
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <!-- Substitui os src das imagens pelos teus próprios ficheiros ou links -->
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+                alt="Sala do restaurante">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
+                alt="Ambiente Lugar do Capitão">
+            <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=600&q=80"
+                alt="Detalhes do espaço">
+            <!-- Podes adicionar mais imagens -->
+        </div>
+    </div>
+
+    <div class="section" id="musica">
+        <h2>Música ao Vivo</h2>
+        <div class="music">
+            <!-- Exemplo de cartaz de evento -->
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Concerto">
+                <h4>Fado à Sexta</h4>
+                <p>21 de Junho, 21h30<br>Com Ana Silva & Amigos</p>
             </div>
-        </section>
-        <section>
-            <h2>Ementa</h2>
-            <div class="ementa">
-                <div class="ementa-categoria">
-                    <h3>Entradas</h3>
-                    <ul>
-                        <li>Pão e Azeite <span class="preco">€2,00</span></li>
-                        <li>Sopa do Dia <span class="preco">€3,50</span></li>
-                        <li>Salada de Polvo <span class="preco">€5,00</span></li>
-                    </ul>
-                </div>
-                <div class="ementa-categoria">
-                    <h3>Pratos Principais</h3>
-                    <ul>
-                        <li>Bacalhau à Brás <span class="preco">€12,00</span></li>
-                        <li>Arroz de Marisco <span class="preco">€14,00</span></li>
-                        <li>Frango Grelhado <span class="preco">€10,00</span></li>
-                    </ul>
-                </div>
-                <div class="ementa-categoria">
-                    <h3>Sobremesas</h3>
-                    <ul>
-                        <li>Mousse de Chocolate <span class="preco">€4,00</span></li>
-                        <li>Pudim Caseiro <span class="preco">€3,50</span></li>
-                        <li>Fruuuuuta da Época <span class="preco">€3,00</span></li>
-                    </ul>
-                </div>
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Jazz">
+                <h4>Noite de Jazz</h4>
+                <p>28 de Junho, 22h<br>Quarteto Jazz do Norte</p>
             </div>
-        </section>
+            <!-- Adiciona mais cartazes conforme necessário -->
+            <div class="music-poster">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                    alt="Cartaz Música ao Vivo">
+                <h4>Rock no Capitão</h4>
+                <p>5 de Julho, 22h<br>Banda: Os Navegantes</p>
+            </div>
+        </div>
+        <p style="margin-top:25px; color:#a67c52;">Segue-nos nas redes sociais para saberes sempre os próximos eventos!
+        </p>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Lugar do Capitão &mdash; Todos os direitos reservados
     </div>
 </body>
 
