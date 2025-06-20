@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         :root {
-            --header-height: 130px;
+            --header-height: 80px;
         }
 
         body {
@@ -17,7 +17,7 @@
             color: #5c432a;
         }
 
-        header {
+        /*        header {
             background: #f7e7c5;
             padding: 30px 0 15px 0;
             text-align: center;
@@ -28,8 +28,59 @@
             width: 100vw;
             z-index: 1000;
         }
+*/
+
+        header {
+            position: relative;
+            background: #f7e7c5;
+            /*text-align: center;*/
+            display: flex;
+            /*padding-top: 60px;`/
+
+            /* espaço para a imagem */
+            /*padding-bottom: 25px;*/
+
+            justify-content: space-between;
+        }
+
+        header-logo {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -30%);
+            z-index: 2;
+        }
+
+        .header-logo img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #fffbe6;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
+            background: #fffbe6;
+            object-fit: cover;
+        }
 
         header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.7em;
+            margin: 0;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 1;
+            margin-top: 40px;
+            /* espaço extra para não ficar atrás da imagem */
+        }
+
+        nav {
+            margin-top: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        /*        header h1 {
             font-family: 'Georgia', serif;
             font-size: 2.7em;
             margin: 0;
@@ -39,7 +90,7 @@
         nav {
             margin-top: 15px;
         }
-
+*/
         nav a {
             color: #a67c52;
             text-decoration: none;
@@ -142,12 +193,34 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
         }
 
+        /* 
         .footer {
             text-align: center;
             color: #a67c52;
             margin: 40px 0 10px 0;
             font-size: 0.95em;
         }
+        ---------------------------------    
+        Trocado para ficar sempre visivel
+        ---------------------------------
+        */
+
+        .footer {
+            text-align: center;
+            color: #a67c52;
+            margin: 0;
+            /* Remova as margens para evitar espaçamento extra */
+            font-size: 0.95em;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            /* Opcional: para garantir contraste */
+            z-index: 1000;
+            /* Opcional: para garantir que fique acima de outros elementos */
+        }
+
 
         .music {
             display: flex;
@@ -219,19 +292,40 @@
 </head>
 
 <body>
+    <!--    <header>
+
+        <h1><img src="Cap.jpg" width="80" height="70"> Lugar do Capitão</h1>
+        <nav>
+            <a href="#restaurante">O Restaurante</a>
+            <a href="#ementa">Ementa</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#musica">Música ao Vivo</a>
+            <a href="index_0.html">PASSO</a>
+        </nav>
+    </header>
+-->
     <header>
+        <div class="header-logo">
+            <img src="Cap.jpg" alt="Capitão" />
+        </div>
         <h1>Lugar do Capitão</h1>
         <nav>
             <a href="#restaurante">O Restaurante</a>
             <a href="#ementa">Ementa</a>
             <a href="#galeria">Galeria</a>
             <a href="#musica">Música ao Vivo</a>
+            <a href="index_0.html">PASSO</a>
         </nav>
     </header>
+
 
     <div class="spacer"></div>
 
     <div class="section" id="restaurante">
+        <b>....</b><br>
+        <b>....</b><br>
+        <b>....</b><br>
+        <b>....</b><br>
         <h2>O Restaurante</h2>
         <div class="about">
             Bem-vindo ao <b>Lugar do Capitão</b>! Um espaço acolhedor onde a tradição e o sabor se encontram. Venha
@@ -417,7 +511,9 @@
     </div>
 
     <div class="footer">
-        &copy; 2025 Lugar do Capitão &mdash; Todos os direitos reservados
+        &copy; 2025 Lugar do Capitão &mdash; Todos os direitos reservados -
+        <a href="https://www.facebook.com/LUGARDOCAPITAOBAR?locale=pt_PT" target="_blank"
+            title="Like Our Page!">Facebook</a>
     </div>
 </body>
 
